@@ -576,27 +576,8 @@ footer { padding: 24px 20px; flex-direction: column; align-items: flex-start; }
   <div class="waitlist-inner">
     <h2 class="waitlist-heading">Get early access.<br/>Free during beta.</h2>
     <p class="waitlist-sub">No credit card. No commitment. Tell us about your layout and we'll be in touch.</p>
-    <div class="form-wrap">
-      <div class="form-field">
-        <label class="form-label" for="email">Email address</label>
-        <input class="form-input" type="email" id="email" placeholder="you@example.com" required/>
-      </div>
-      <div class="form-field">
-        <label class="form-label" for="system">What type of layout do you run?</label>
-        <select class="form-select" id="system">
-          <option value="">Select your setup</option>
-          <option value="dc">DC analogue only</option>
-          <option value="dcc-z21">DCC — Roco Z21</option>
-          <option value="dcc-jmri">DCC — JMRI (any hardware)</option>
-          <option value="dcc-other">DCC — other system</option>
-          <option value="hybrid">Hybrid DC + DCC</option>
-          <option value="none">Don't have one yet — planning</option>
-        </select>
-      </div>
-      <button class="submit-btn" onclick="handleSubmit()">Reserve my spot</button>
-      <div class="success-msg" id="success">You're on the list. We'll be in touch when beta opens — thanks for joining.</div>
-      <p class="form-fine">We'll only email you when there's something worth saying. No spam, ever.</p>
-    </div>
+    <iframe data-tally-src="https://tally.so/embed/LZEKqy?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" loading="lazy" width="100%" height="300" frameborder="0" marginheight="0" marginwidth="0" title="Headcode Waitlist" style="margin-top:8px;"></iframe>
+    <p class="form-fine" style="margin-top:16px;">We'll only email you when there's something worth saying. No spam, ever.</p>
   </div>
 </section>
 
@@ -618,14 +599,10 @@ function setMode(mode) {
   document.querySelector(`.mode-tab.${mode}`).classList.add('active');
   document.getElementById(`panel-${mode}`).classList.add('active');
 }
-function handleSubmit() {
-  const email = document.getElementById('email').value;
-  if (!email || !email.includes('@')) { document.getElementById('email').focus(); return; }
-  document.getElementById('success').style.display = 'block';
-  document.querySelector('.submit-btn').style.display = 'none';
 }
-document.getElementById('email').addEventListener('keydown', e => { if (e.key === 'Enter') handleSubmit(); });
 </script>
+
+<script async src="https://tally.so/widgets/embed.js"></script>
 
 </body>
 </html>
